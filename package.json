@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "nodemon --exec babel-node ./src/server.js",
-    "test": "jest --detectOpenHandles",
+    "test": "jest",
     "migrate": "npx knex migrate:latest --knexfile=\"src/databases/knex/config.js\"",
     "rollback": "npx knex migrate:rollback --knexfile=\"src/databases/knex/config.js\"",
     "seed": "npx knex seed:run --knexfile=\"src/databases/knex/config.js\""
