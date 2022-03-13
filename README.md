@@ -1,5 +1,5 @@
 # Dattabot Technical Test
-Dattabot Technical Test for position Backend Engineer.
+Dattabot Technical Test for Backend Engineer position.
 
 ## Requirements
 * Node JS
