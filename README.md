@@ -31,6 +31,6 @@ Dattabot Technical Test for Backend Engineer position.
     ```bash
     npm run start 
     ```
-11. Import "dattabot_technical_test.postman_collection.json" to Postman.
+11. Import postman documentation "dattabot_technical_test.postman_collection.json" to Postman App.
 12. Consume API Service with Postman.
 13. Done.
