@@ -1,0 +1,44 @@
+{
+  "name": "dattabot-technical-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node ./src/server.js",
+    "test": "jest --detectOpenHandles",
+    "migrate": "npx knex migrate:latest --knexfile=\"src/databases/knex/config.js\"",
+    "rollback": "npx knex migrate:rollback --knexfile=\"src/databases/knex/config.js\"",
+    "seed": "npx knex seed:run --knexfile=\"src/databases/knex/config.js\""
+  },
+  "author": "Rafi Firmansyah",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/runtime": "^7.17.2",
+    "babel-jest": "^27.5.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.0",
+    "dotenv-cli": "^5.0.0",
+    "express": "^4.17.3",
+    "express-validator": "^6.14.0",
+    "jest": "^27.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^1.0.2",
+    "knex-migrate": "^1.7.4",
+    "multer": "^1.4.4",
+    "nanoid": "^3.3.1",
+    "node-schedule": "^2.1.0",
+    "nodemailer": "^6.7.2",
+    "pg": "^8.7.3",
+    "pg-promise": "^10.11.1",
+    "sharp": "^0.30.2",
+    "supertest": "^6.2.2",
+    "url-slug": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

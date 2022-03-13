@@ -1,0 +1,1365 @@
+{
+	"info": {
+		"_postman_id": "bffef181-1920-4b9c-bcc9-6d005555b99e",
+		"name": "Dattabot Technical Test",
+		"description": "This is the API documentation of the Time Capsule platform.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"helloworld@gmail.com\",\n    \"password\": \"aaaaaa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				},
+				"description": "Users can use this endpoint to self-registration.\n\n#### Body :\n\n| **Field** | **Type** | **Min. Character** | **Max. Character** | **Unique** | **Mandatory** | **Description** |\n| --- | --- | --- | --- | --- | --- | --- |\n| email | string | 6 | 255 | yes | yes | The email of user. Format email must be valid, example: user@example.com. |\n| password | string | 6 | 255 | no | yes | The password of user. |"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"derekn2@cheesethecakerecipes.com\",\n    \"password\": \"helloworld\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "59"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3b-OPf504tB03l1YHqF1PTcVWP/Mo8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Mar 2022 10:57:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"User successfully created.\"\n}"
+				},
+				{
+					"name": "Error Validation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "182"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b6-yfAUvNAXsS8PvZPIGBB8MrDL0xY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Mar 2022 11:08:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"email\": {\n        \"value\": \"\",\n        \"msg\": \"The email is required.\",\n        \"param\": \"email\",\n        \"location\": \"body\"\n    },\n    \"password\": {\n        \"value\": \"\",\n        \"msg\": \"The password is required.\",\n        \"param\": \"password\",\n        \"location\": \"body\"\n    }\n}"
+				},
+				{
+					"name": "Failed (Internal Server Error)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"law56ran77@24hinbox.com\",\n    \"password\": \"helloworld\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"36-Mu5E4NNN//ilZj/UDBk95ynHAlk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Mar 2022 11:07:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Failed\",\n    \"message\": \"User failed to create.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				},
+				"description": "Users can use this endpoint to login.\n\n#### Body :\n\n| **Field** | **Mandatory** | **Description** |\n| --- | --- | --- |\n| email | yes | The email of user. Format email must be valid, example: [user@example.com](mailto:user@example.com). |\n| password | yes | The password of user. |"
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"lsadaw56rasn77@nbsox.com\",\n    \"password\": \"helloworld\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "236"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ec-OXC8KIoYl/7J9k3QpaO5MC85QJY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Mar 2022 17:41:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Login successfully.\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6ImxzYWRhdzU2cmFzbjc3QG5ic294LmNvbSIsImlhdCI6MTY0NjkzNDA4N30.Sg2HpyVYSSNRmmEoTF4N-ko0Ma_Ateoh2Nx4mG0y1HI\"\n    }\n}"
+				},
+				{
+					"name": "Error Validation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "182"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b6-yfAUvNAXsS8PvZPIGBB8MrDL0xY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Mar 2022 15:54:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"email\": {\n        \"value\": \"\",\n        \"msg\": \"The email is required.\",\n        \"param\": \"email\",\n        \"location\": \"body\"\n    },\n    \"password\": {\n        \"value\": \"\",\n        \"msg\": \"The password is required.\",\n        \"param\": \"password\",\n        \"location\": \"body\"\n    }\n}"
+				},
+				{
+					"name": "Failed (Internal Server Error)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"lsadaw56rasn77@nbsox.com\",\n    \"password\": \"helloworld\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-F3e+w5DDWZhtcKvy1Mm7UtcVz7s\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Mar 2022 15:58:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"status\": \"Failed\",\n    \"message\": \"Failed to login.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Time Capsule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6InJhZmlmaXJtYW5zeWFoMjg3QGdtYWlsLmNvbSIsImlhdCI6MTY0NzEwNjU4MH0.x1u3kUo-oS_GRa3z-hR7BzlnH_95qkt83p90p2SdCk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "subject",
+							"value": "Prasasti Lobu Tua (Barus)",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "Prasasti Lobu Tua atau juga dikenal sebagai Prasasti Barus berangka tahun 1088 M ditulis menggunakan aksara Tamil dan Grantha. Prasasti berbahasa Tamil ini berisi mengenai penarikan pajak dan keberadaan perkumpulan pedagang asing yang bermukim di Barus. Prasasti Lobu Tua memberikan informasi mengenai nama lama Barus yang disebut sebagai Vārōcu. ",
+							"type": "text"
+						},
+						{
+							"key": "attach_files",
+							"type": "file",
+							"src": [
+								"/Users/rafi/Desktop/Data Dummy Time Capsule/Prasasti Lobu Tua (Barus)/alihAksara.jpeg",
+								"/Users/rafi/Desktop/Data Dummy Time Capsule/Prasasti Lobu Tua (Barus)/Prasasti_Lobu_Tua.jpeg"
+							]
+						},
+						{
+							"key": "release_time",
+							"value": "1647104394000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/time-capsules",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"time-capsules"
+					]
+				},
+				"description": "Users can use this endpoint to create time capsule.  \n\n#### Body :\n\n| **Field** | **Type** | **Min. Character** | **Max. Character** | **Unique** | **Mandatory** | **Description** |\n| --- | --- | --- | --- | --- | --- | --- |\n| subject | string | 3 | 255 | no | yes | The subject of time capsule. |\n| message | text | 3 | \\- | no | yes | The message of time capsule. |\n| attach_files | file/multifile | \\- | \\- | no | yes | The file/document of time capsule. Format must be : .jpg, .jpeg, .png, or .pdf. |\n| release_time | int | \\- | \\- | no | yes | The release time of time capsule and automatic send email notification if it has been released. Release time must be greater than time now and format must be unix epoch timestamp in milliseconds. example : 1646975847000. |"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "Prasasti Lobu Tua (Barus)",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Prasasti Lobu Tua atau juga dikenal sebagai Prasasti Barus berangka tahun 1088 M ditulis menggunakan aksara Tamil dan Grantha. Prasasti berbahasa Tamil ini berisi mengenai penarikan pajak dan keberadaan perkumpulan pedagang asing yang bermukim di Barus. Prasasti Lobu Tua memberikan informasi mengenai nama lama Barus yang disebut sebagai Vārōcu. ",
+									"type": "text"
+								},
+								{
+									"key": "attach_files",
+									"type": "file",
+									"src": [
+										"/Users/rafi/Desktop/Data Dummy Time Capsule/Prasasti Lobu Tua (Barus)/alihAksara.jpeg",
+										"/Users/rafi/Desktop/Data Dummy Time Capsule/Prasasti Lobu Tua (Barus)/Prasasti_Lobu_Tua.jpeg"
+									]
+								},
+								{
+									"key": "release_time",
+									"value": "1647181749000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/time-capsules",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time-capsules"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"43-ZNW62D2EV3Uc5sRxhVP8TxXMkhg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Mar 2022 14:26:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Time capsule successfully created.\"\n}"
+				},
+				{
+					"name": "Unauthorized (Not Login)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "Prasasti Pasir Awi",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Prasasti Pasir Awi adalah salah satu dari tujuh prasasti peninggalan kerajaan tertua di barat Pulau Jawa. Prasasti ini telah ditetapkan menjadi Benda Cagar Budaya peringkat nasional. Berbeda dengan keenam prasasti lainnya yang hampir seluruhnya berada di dekat aliran sungai, lokasi prasasti ini justru berada di perbukitan. Tepatnya di sebelah selatan bukit Pasir Awi (± 559 mdpl) di kawasan hutan di perbukitan Cipamingkis Kabupaten Bogor. Untuk bisa sampai ke lokasi prasasti, kita dapat melalui Jalan Sukaraja Dayeuh. Kemudian masuk ke jalan berbatuan dengan medan yang cukup menyulitkan kendaraan yang melaluinya. Selesai jalan berbatuan dilalui, selanjutnya dihadapkan dengan undakan anak tangga yang cukup curam. Setelah menaiki tangga itu, akhirnya sampailah di lokasi insitu tempat Prasasti Pasir Awi. Sejarah prasasti ini tidaklah banyak diungkap. Hanya saja keberadaannya sudah diketahui sejak 1864. Ditemukan kali pertama oleh seorang arkeolog asal Belanda, bernama N.W. Hoepermans. S. Pada prasasti ini terdapat pahatan sepasang tapak kaki yang menghadap ke arah utara dan timur. Pahatan serupa juga ditemukan di Prasasti Ciaruteun dan Prasasti Pasir Jambu yang terletak di Kecamatan Cibungbulan dan Kecamatan Nanggung, Kabupaten Bogor. Pahatan tapak kaki tersebut dianggap sebagai tapak kaki milik Sri Purnawarman raja dari Kerajaan Taruma atau Tarumanegara. Kerajaan ini pernah berjaya pada abad ke-4 hingga abad ke-7 Masehi. ",
+									"type": "text"
+								},
+								{
+									"key": "attach_files",
+									"type": "file",
+									"src": [
+										"/Users/rafi/Desktop/Data Dummy Time Capsule/Prasasti Pasir Awi/Prasasti-Pasir-Awi-1-696x519.jpeg",
+										"/Users/rafi/Desktop/Data Dummy Time Capsule/Prasasti Pasir Awi/Prasasti-Pasir-Awi-2-Cungkup-696x521.jpeg",
+										"/Users/rafi/Desktop/Data Dummy Time Capsule/Prasasti Pasir Awi/Prasasti-Pasir-Awi-3-696x516.jpeg"
+									]
+								},
+								{
+									"key": "release_time",
+									"value": "1647408729000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/time-capsules",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time-capsules"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "77"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4d-nzwZw/N7zpqCMAtdfPoveHYrU1g\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Mar 2022 15:10:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Unauthorized\",\n    \"message\": \"Please login for access this resources.\"\n}"
+				},
+				{
+					"name": "Error Validation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "attach_files",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "release_time",
+									"value": "",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/time-capsules",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time-capsules"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "399"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"18f-Q20pHHSSXaqXormxgEyoiJ8DAXo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Mar 2022 07:09:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"subject\": {\n        \"value\": \"\",\n        \"msg\": \"The subject is required.\",\n        \"param\": \"subject\",\n        \"location\": \"body\"\n    },\n    \"message\": {\n        \"value\": \"\",\n        \"msg\": \"The message is required.\",\n        \"param\": \"message\",\n        \"location\": \"body\"\n    },\n    \"release_time\": {\n        \"value\": \"\",\n        \"msg\": \"The release time is required.\",\n        \"param\": \"release_time\",\n        \"location\": \"body\"\n    },\n    \"attach_files\": {\n        \"value\": [],\n        \"msg\": \"The attach files is required.\",\n        \"param\": \"attach_files\",\n        \"location\": \"body\"\n    }\n}"
+				},
+				{
+					"name": "Failed (Internal Server Error)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "Prasasti Lobu Tua (Barus)",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Prasasti Lobu Tua atau juga dikenal sebagai Prasasti Barus berangka tahun 1088 M ditulis menggunakan aksara Tamil dan Grantha. Prasasti berbahasa Tamil ini berisi mengenai penarikan pajak dan keberadaan perkumpulan pedagang asing yang bermukim di Barus. Prasasti Lobu Tua memberikan informasi mengenai nama lama Barus yang disebut sebagai Vārōcu. ",
+									"type": "text"
+								},
+								{
+									"key": "attach_files",
+									"type": "file",
+									"src": [
+										"/Users/rafi/Desktop/Data Dummy Time Capsule/Prasasti Lobu Tua (Barus)/alihAksara.jpeg",
+										"/Users/rafi/Desktop/Data Dummy Time Capsule/Prasasti Lobu Tua (Barus)/Prasasti_Lobu_Tua.jpeg"
+									]
+								},
+								{
+									"key": "release_time",
+									"value": "1646967600000",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/time-capsules",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time-capsules"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3e-UvXSBlGnJNbCKX0qZj9nvCHlfBY\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Mar 2022 07:14:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Failed\",\n    \"message\": \"Failed to create time capsule.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Time Capsule",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6InJhZmlmaXJtYW5zeWFoMjg3QGdtYWlsLmNvbSIsImlhdCI6MTY0NzEwNjU4MH0.x1u3kUo-oS_GRa3z-hR7BzlnH_95qkt83p90p2SdCk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/time-capsules?page=1&size=30&sort=DESC",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"time-capsules"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "30"
+						},
+						{
+							"key": "sort",
+							"value": "DESC"
+						}
+					]
+				},
+				"description": "Users can use this endpoint to get all time capsule with filter active/inactive time capsule (based on release date time) and sort by release date time.\n\n#### Query Params:\n\n| **Field** | **Description** |\n| --- | --- |\n| page | The page of pagination. |\n| size | The size of time capsule per page. |\n| sort | The sorting by release date time. Options sorting : ASC or DESC |\n| status | The status of time capsule. If has been release, status is active. otherwise inactive. Options filter : status or in active. If you can display all the status, do not fill in the status. |"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/time-capsules?page=1&size=30&sort=DESC",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time-capsules"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "30"
+								},
+								{
+									"key": "sort",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "616"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"268-ylh1zuD09b2l3+3s/JXDwFWE/Io\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Mar 2022 14:58:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"status\": \"Success\",\n    \"data\": [\n        {\n            \"id\": \"3\",\n            \"subject\": \"Prasasti Pasir Awi\",\n            \"slug\": \"prasasti-pasir-awi-5faeca\",\n            \"release_date\": \"16-03-2022\",\n            \"release_time\": \"12:32:09\",\n            \"status\": \"inactive\"\n        },\n        {\n            \"id\": \"2\",\n            \"subject\": \"Prasasti Ciaruteun\",\n            \"slug\": \"prasasti-ciaruteun-69f28a\",\n            \"release_date\": \"13-03-2022\",\n            \"release_time\": \"21:32:09\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": \"1\",\n            \"subject\": \"Prasasti Lobu Tua (Barus)\",\n            \"slug\": \"prasasti-lobu-tua-barus-e2a0b7\",\n            \"release_date\": \"13-03-2022\",\n            \"release_time\": \"21:29:09\",\n            \"status\": \"active\"\n        }\n    ],\n    \"information\": {\n        \"items\": 3,\n        \"total_items\": 3,\n        \"first_page\": 1,\n        \"previous_page\": null,\n        \"current_page\": 1,\n        \"next_page\": null,\n        \"last_page\": 1\n    }\n}"
+				},
+				{
+					"name": "Unauthorized (Not Login)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/time-capsules?page=1&size=30&sort=DESC",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time-capsules"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "30"
+								},
+								{
+									"key": "sort",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "77"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4d-nzwZw/N7zpqCMAtdfPoveHYrU1g\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Mar 2022 15:11:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"status\": \"Unauthorized\",\n    \"message\": \"Please login for access this resources.\"\n}"
+				},
+				{
+					"name": "Failed (Internal Server Error)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/time-capsules?page=1&size=30&sort=DESC",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time-capsules"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "30"
+								},
+								{
+									"key": "sort",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-5zrPL8a4YE/KxCGsl1uOURpuKpA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Mar 2022 14:59:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"status\": \"Failed\",\n    \"message\": \"Failed to get all time capsule.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Specific Time Capsule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6InJhZmlmaXJtYW5zeWFoMjg3QGdtYWlsLmNvbSIsImlhdCI6MTY0NzEwNjU4MH0.x1u3kUo-oS_GRa3z-hR7BzlnH_95qkt83p90p2SdCk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/time-capsules/prasasti-lobu-tua-barus-e2a0b7",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"time-capsules",
+						"prasasti-lobu-tua-barus-e2a0b7"
+					]
+				},
+				"description": "Users can use this endpoint to get specific time capsule. and can only display active time capsule.  \n  \nParameter after this endpoint \"/time-capsules/\" is slug of time capsule."
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time-capsules/prasasti-lobu-tua-barus-e2a0b7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time-capsules",
+								"prasasti-lobu-tua-barus-e2a0b7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "726"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2d6-sK8QaOBm++AW1hRflgvpANOLj1U\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Mar 2022 15:24:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"status\": \"Success\",\n    \"data\": {\n        \"id\": \"1\",\n        \"subject\": \"Prasasti Lobu Tua (Barus)\",\n        \"slug\": \"prasasti-lobu-tua-barus-e2a0b7\",\n        \"message\": \"Prasasti Lobu Tua atau juga dikenal sebagai Prasasti Barus berangka tahun 1088 M ditulis menggunakan aksara Tamil dan Grantha. Prasasti berbahasa Tamil ini berisi mengenai penarikan pajak dan keberadaan perkumpulan pedagang asing yang bermukim di Barus. Prasasti Lobu Tua memberikan informasi mengenai nama lama Barus yang disebut sebagai Vārōcu.\",\n        \"release_date\": \"13-03-2022\",\n        \"release_time\": \"21:29:09\",\n        \"files_path\": [\n            \"time-capsules-file/prasasti-lobu-tua-barus-e2a0b7/305281c5444db5eebf86cb44187abe47.jpeg\",\n            \"time-capsules-file/prasasti-lobu-tua-barus-e2a0b7/12dfb4f896ff4f22a65b1f6ba469bb65.jpeg\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "Unauthorized (Not Login)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time-capsules/prasasti-lobu-tua-barus-e2a0b7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time-capsules",
+								"prasasti-lobu-tua-barus-e2a0b7"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "77"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4d-nzwZw/N7zpqCMAtdfPoveHYrU1g\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Mar 2022 15:12:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"status\": \"Unauthorized\",\n    \"message\": \"Please login for access this resources.\"\n}"
+				},
+				{
+					"name": "Locked (Inactive Time Capsule))",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time-capsules/prasasti-pasir-awi-5faeca",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time-capsules",
+								"prasasti-pasir-awi-5faeca"
+							]
+						}
+					},
+					"status": "Locked",
+					"code": 423,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"68-hqEb+HUJKOexTe54gCsPKlw97wI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Mar 2022 15:25:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Locked\",\n    \"message\": \"Unable to display the time capsule, because it hasn't been released yet.\"\n}"
+				},
+				{
+					"name": "Failed (Internal Server Error)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time-capsules/prasasti-lobu-tua-barus-e2a0b7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time-capsules",
+								"prasasti-lobu-tua-barus-e2a0b7"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"42-KTGjyGDdL79ItQ2/5tRNW8ophGI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Mar 2022 15:14:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"status\": \"Failed\",\n    \"message\": \"Failed to get time capsule detail.\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
